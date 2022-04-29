@@ -1,10 +1,12 @@
 package basicKnowledge.interfaceAndAbstractClass.version_3;
 
 public class FilterDemo {
-    private static Filter filter;
+    private static CombinableFilter backgroundFilter;
+    private static Filter frontFilter;
 
     public static void main(String[] args) {
-        filter = new AgeFilter();
-        filter.doFilter();
+        backgroundFilter = new BackgroundFilter();
+        frontFilter = new HairStyleFilter();
+        backgroundFilter.doCombinableFilter(frontFilter);
     }
 }
